@@ -22,15 +22,15 @@ public class ShopApp {
 
         Customer c1 = new Customer();
 
-        c1.name = "Tyer";
-        c1.size = "S";
+        c1.setName("Tyer");
+        c1.setSize("S");
 
-        System.out.println("Customer is " + c1.name);
+       
 
         Clothing item1 = new Clothing();
         Clothing item2 = new Clothing();
 
-        Clothing[] items = {item1, item2};
+        Clothing[] items = {item1, item2, new Clothing(), new Clothing()};
 
         item1.setDescription("Blue Jacket");
         item1.setPrice(20.9);
@@ -39,32 +39,24 @@ public class ShopApp {
         item2.setDescription("Orange T-Shirt");
         item2.setPrice(10.5);
         item2.setSize("S");
+        
+        items[2].setDescription("Green Scarf");
+        items[2].setPrice(5.0);
+        items[2].setSize("S");
+        
+        items[3].setDescription("Blue T-Shirt");
+        items[3].setPrice(10.5);
+        items[3].setSize("S");
 
 //        System.out.println("Item 1" + "," + item1.description + "," + item1.price + "," + item1.size);
 //        System.out.println("Item 2" + "," + item2.description + "," + item2.price + "," + item2.size);
 //        total = (item1.price + item2.price * 2) * (1 + tax);
-        int measurement = 3;
+        int measurement = 8;
+        
+       c1.setSize(measurement);
+       
 
-        switch (measurement) {
-            case 1:
-            case 2:
-                case3:
-                c1.size = "S";
-                break;
-            case 4:
-            case 5:
-            case 6:
-                c1.size = "M";
-                break;
-            case 7:
-            case 8:
-            case 9:
-                c1.size = "L";
-                break;
-            default:
-                c1.size = "X";
-
-        }
+       System.out.println("Customer is " + c1.getName() + "," + c1.getSize());
 
         for (Clothing item : items) {
             if (c1.getSize().equals(item.getSize())) {
